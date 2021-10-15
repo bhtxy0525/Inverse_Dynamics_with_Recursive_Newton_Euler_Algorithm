@@ -1,1 +1,1 @@
-# Inverse-Dynamicswith-recursive-Newton-Euler-Algorithm
+# Inverse-Dynamics with-recursive-Newton-Euler-Algorithm
