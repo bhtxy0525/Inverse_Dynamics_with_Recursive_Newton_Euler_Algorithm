@@ -1,4 +1,4 @@
-# Inverse Dynamics with Recursive Newton Euler Algorithm
+# Inverse Dynamics with Recursive Newton-Euler Algorithm
 Developed by: Haolin Ma.
 
 Supervisor: Xinyang Tian.
