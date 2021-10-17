@@ -1,7 +1,7 @@
 # Inverse Dynamics with recursive Newton Euler Algorithm
-Developed by: Xinyang Tian (2021).
+Developed by: Haolin Ma.
 
-Supervisor: Haolin Ma.
+Supervisor: Xinyang Tian.
 
 Platform: Matlab 2019b.
 
