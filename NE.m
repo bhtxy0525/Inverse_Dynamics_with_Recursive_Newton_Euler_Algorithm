@@ -1,16 +1,17 @@
 %% Recursive Newton-Euler Algorithm for dynamic model of serial robots with modified DH parameters.
-%% Take iiwa7 as example.
+%% Take KUKA iiwa7 as example.
 
 
-function tau_list = NE(q,qd,qdd)
+function tau_list = NE(q,qd,qdd，G)
 % 输入参数：
-% q：广义关节坐标，此处为关节转角，n×7矩阵，每一行向量对应一个关节转角，单位：rad
-% qd： 广义关节坐标一阶导数，此处为关节角速度，n×7矩阵，每一行向量对应一个关节角速度，单位：rad/s
-% qdd： 广义关节坐标二阶导数，此处为关节角加速度，n×7矩阵，每一行向量对应一个关节角加速度，单位：rad/s^2
+% q：广义关节坐标，此处为关节转角，1×7矩阵，每一行向量对应一组关节转角，单位：rad
+% qd： 广义关节坐标一阶导数，此处为关节角速度，1×7矩阵，每一行向量对应一组关节角速度，单位：rad/s
+% qdd： 广义关节坐标二阶导数，此处为关节角加速度，1×7矩阵，每一行向量对应一组关节角加速度，单位：rad/s^2
+% G：重力项，当G = 1,有重力影响，当G = 0,无重力影响；
 % note:：三个输入参数的长度需保持一致
 
 % 输出参数：
-% tau_list ：关节力矩，n×7矩阵，每一行向量对应一个关节力矩，单位：Nm
+% tau_list ：关节力矩，1×7矩阵，每一行向量对应一组关节力矩，单位：Nm
 
 
 % 判断输入是否符合规则
@@ -22,7 +23,7 @@ end
 % 参数初始化
 % DH_list：机器人DH参数，4×7矩阵
 %          alpha   a     d     theta
-DH_list = [0       0    0.34     0;
+dh_list = [0       0    0.34     0;
            pi/2    0    0        0;
            -pi/2   0    0.4      0;
            pi/2    0    0        0;
@@ -83,7 +84,12 @@ f_external = zeros(2,3);
 number_of_links = 7;
 
 z = [0,0,1]';  % 关节轴
-g = -9.81;     % 重力加速度，单位m/s^2
+%%判断是否施加重力
+if G == 1
+    g = -9.81;     % 重力加速度，单位m/s^2
+else
+    g = 0;
+end
 
 % 位姿变换矩阵参数设置
 for i = 1:number_of_links+1
@@ -140,4 +146,3 @@ for k = 1: rows
         tau_list (k,i) = dot(n(:,:,i),z);
     end
 end
-
