@@ -8,7 +8,7 @@ Platform: Matlab 2019b.
 In this work, the dynamic model of a 7-DOF robot manipulator has been established. Here are some notes about this script:
 
 - Using recursive Newton-Euler algorithm to calculate the inverse dynamic model of serial robot manipulator (only rotational joints) with modified DH parameters.
-- The parameters of the modified DH coordinates, inertia tensor, centroid coordinates and mass of each link can be find in the *iiwamodel* file.
+- The parameters of the modified DH coordinates, inertia tensor, centroid coordinates and mass of each link can be find in the ***iiwamodel*** file.
 - No external force/torque.
 
 # Implementation 
