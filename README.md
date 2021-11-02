@@ -16,4 +16,5 @@ The code is implemented in MATLAB R2019b. Also, other versions of Matlab are ava
 
 # References
 [1] Q. Zhan, Robotics: Mechanisms Kinematics, Dynamics and Motion Planning, Tsinghua University Press, China, 2019.
+
 [2] A. De Luca and L. Ferrajoli, "A modified newton-euler method for dynamic computations in robot fault detection and control," 2009 IEEE International Conference on Robotics and Automation, 2009, pp. 3359-3364.
