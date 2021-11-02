@@ -12,7 +12,7 @@ In this work, the dynamic model of a 7-DOF robot manipulator has been establishe
 - No external force/torque.
 
 ## Implementation 
-The code is implemented in MATLAB R2019b. Also, other versions of Matlab are available. Before running this script, pleas enter the input parameters: q, qd, and qdd. Cubic or quintic polynomials are recommended for planning trajectory. As a consequence, the output parameters are seven torques corresponding to seven joints of the robot manipulator.
+The code is implemented in MATLAB R2019b. Also, other versions of Matlab are available. Before running this script, pleas enter the input parameters: q (1×7), qd (1×7), and qdd (1×7). Cubic or quintic polynomials are recommended for planning trajectory. As a consequence, the output parameters are seven torques corresponding to seven joints of the robot manipulator.
 
 ## References
 [1] Q. Zhan, Robotics: Mechanisms Kinematics, Dynamics and Motion Planning, Tsinghua University Press, China, 2019.  
