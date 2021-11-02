@@ -1,6 +1,6 @@
 %% Recursive Newton-Euler Algorithm for dynamic model of serial robots with modified DH parameters.
 %% Take iiwa7 as example.
-function tau_list = NE(q,qd,qdd,G)
+function tau_list = RNE(q,qd,qdd,G)
 %% 输入参数：
 % q：广义关节坐标，此处为关节转角，1×7矩阵，每一行向量对应一组关节转角，单位：rad；
 % qd： 广义关节坐标一阶导数，此处为关节角速度，1×7矩阵，每一行向量对应一组关节角速度，单位：rad/s；
